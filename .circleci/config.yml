@@ -9,16 +9,14 @@ jobs:
   build:
     machine:
       image: ubuntu-2004:202010-01
-      working_directory: ~/project
+    working_directory: ~/project
     steps:
-      - checkout
       - run:
-          name: "Test Command"
+          name: Test command
           command: ls
       - slack/notify:
           event: always
           template: basic_success_1
-
 
 workflows:
   build:
